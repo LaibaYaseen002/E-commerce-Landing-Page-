@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <input type="text" id="search-bar" placeholder="Search Product..." />
+      <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="Phones">Phones</option>
+        <option value="Laptops">Laptops</option>
+        <option value="Watches">Watches</option>
+        <option value="Sports">Sports</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Gaming">Gaming</option>
+      </select>
+      <select id="brand-filter">
+        <option value="">All Brands</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Dell">Dell</option>
+        <option value="Nike">Nike</option>
+        <option value="Adidas">Adidas</option>
+        <option value="Sony">Sony</option>
+        <option value="Google">Google</option>
+      </select>
+      <div>
+        <button id="sort-price-asc">Sort by Price (Asc)</button>
+        <button id="sort-price-desc">Sort by Price (Desc)</button>
+        <button id="sort-rating-asc">Sort by Rating (Asc)</button>
+        <button id="sort-rating-desc">Sort by Rating (Desc)</button>
+      </div>
+    </header>
+    <aside class="sidebar">
+      <label>Price greater than: <input type="number" id="price-min" /></label>
+      <label>Price less than: <input type="number" id="price-max" /></label>
+      <label
+        >Rating greater than: <input type="number" id="rating-min"
+      /></label>
+      <label>Rating less than: <input type="number" id="rating-max" /></label>
+      <button id="reset-filters">Reset Filters</button>
+    </aside>
+    <main id="product-container"></main>
+    <p id="no-products" style="display: none">No Products Found</p>
+    <script src="script.js"></script>
+  </body>
+</html>
