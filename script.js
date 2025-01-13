@@ -324,6 +324,12 @@ function displayProducts(filteredProducts) {
             <button class="buy-now-btn">Buy Now</button>
         `;
     container.appendChild(card);
+
+    const favoriteBtn = card.querySelector(".favorite-btn");
+    favoriteBtn.addEventListener("click", () => {
+      product.favorite = !product.favorite;
+      favoriteBtn.textContent = product.favorite ? "Unfavorite" : "Favorite";
+    });
   });
   document.getElementById("no-products").style.display = filteredProducts.length
     ? "none"
