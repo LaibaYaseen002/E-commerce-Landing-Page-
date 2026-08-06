@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:#0F172A;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+color:white;
+
+}
+
+.card{
+
+background:#1E293B;
+
+padding:40px;
+
+border-radius:20px;
+
+width:400px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+}
+
+img{
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+margin-bottom:15px;
+
+}
+
+.price{
+
+font-size:28px;
+
+color:#22C55E;
+
+margin:15px 0;
+
+font-weight:bold;
+
+}
+
+button{
+
+margin-top:25px;
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:10px;
+
+background:linear-gradient(135deg,#7C3AED,#06B6D4);
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.9;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img id="productImage">
+
+<h2 id="productName"></h2>
+
+<p id="productDescription"></p>
+
+<div class="price" id="productPrice"></div>
+
+<button onclick="confirmOrder()">
+
+Confirm Purchase
+
+</button>
+
+</div>
+
+<script>
+
+const product=JSON.parse(sessionStorage.getItem("selectedProduct"));
+
+document.getElementById("productImage").src=product.imageUrl;
+
+document.getElementById("productName").textContent=product.productName;
+
+document.getElementById("productDescription").textContent=product.description;
+
+document.getElementById("productPrice").textContent="$"+product.price;
+
+function confirmOrder(){
+
+alert("🎉 Thank you for your purchase!");
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+</html>
